@@ -3,7 +3,8 @@ const nextConfig = {
   // Production deployment configuration for static export
   output: 'export',
   trailingSlash: false,
-  assetPrefix: 'https://portfolio.legacyai.space',
+  // Configure asset prefix based on deployment environment
+  assetPrefix: process.env.GITHUB_ACTIONS ? '' : 'https://portfolio.legacyai.space',
   
   images: {
     unoptimized: true,
