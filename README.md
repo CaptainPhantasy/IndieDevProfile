@@ -1,4 +1,5 @@
 # ⚡ Douglas Talley | AI Strategist & Full-Stack Developer
+*Last updated: 2025-10-20*
 
 ## 👨‍💻 About Me
 
