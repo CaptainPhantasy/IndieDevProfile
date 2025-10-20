@@ -1,0 +1,168 @@
+'use client'
+
+import { motion } from 'framer-motion'
+import { Mail, Github, Linkedin, Twitter, Send as MessageSend } from 'lucide-react'
+import { profile } from '@/data/profile'
+import { Badge } from '@/components/ui'
+import { ButtonComponent as Button } from '@/components/ui'
+
+export function ContactSection() {
+  return (
+    <section id="contact" className="py-20 px-4">
+      <div className="max-w-7xl mx-auto">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <span className="gradient-text">Let's Connect</span>
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Interested in collaboration or have a project in mind? I'd love to hear from you.
+          </p>
+        </motion.div>
+
+        {/* Contact Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          {/* Contact Info */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="space-y-8"
+          >
+            <div>
+              <h3 className="text-2xl font-semibold mb-4">Get in Touch</h3>
+              <p className="text-muted-foreground mb-6">
+                Whether you're looking to discuss AI strategies, mobile development, or potential collaborations, 
+                I'm always open to connecting with fellow developers and innovators.
+              </p>
+              
+              <div className="space-y-4">
+                <div className="flex items-center gap-4">
+                  <div className="p-3 rounded-lg bg-primary/10 text-primary">
+                    <Mail className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="font-medium">Email</p>
+                    <a 
+                      href={`mailto:${profile.email}`}
+                      className="text-primary hover:underline"
+                    >
+                      {profile.email}
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <div className="p-3 rounded-lg bg-primary/10 text-primary">
+                    <Github className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="font-medium">GitHub</p>
+                    <a 
+                      href={profile.social.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      github.com/douglastalley
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <div className="p-3 rounded-lg bg-primary/10 text-primary">
+                    <Linkedin className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="font-medium">LinkedIn</p>
+                    <a 
+                      href={profile.social.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      linkedin.com/in/douglastalley
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <div className="p-3 rounded-lg bg-primary/10 text-primary">
+                    <Twitter className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="font-medium">Twitter</p>
+                    <a 
+                      href={profile.social.twitter}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      @vibecoderdoug
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Current Focus */}
+            <div className="border-t pt-6">
+              <h4 className="font-semibold mb-3">Current Focus Areas</h4>
+              <ul className="text-muted-foreground space-y-2">
+                <li>🤖 Multi-agent AI systems and orchestration</li>
+                <li>📱 Cross-platform mobile development with React Native</li>
+                <li>🔧 Developer productivity tools and automation</li>
+                <li>📊 SaaS product design and architecture</li>
+                <li>🎯 AI/ML integration and natural language processing</li>
+              </ul>
+            </div>
+          </motion.div>
+
+          {/* CTA Card */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <div className="project-card h-full flex flex-col justify-between">
+              <div>
+                <h3 className="text-2xl font-semibold mb-4">Ready to Collaborate?</h3>
+                <p className="text-muted-foreground mb-6">
+                  I'm actively seeking opportunities to work on innovative AI/ML projects, 
+                  mobile applications, and developer tools. Let's build something amazing together.
+                </p>
+                
+                <div className="space-y-4">
+                  <Button asChild size="lg" className="w-full bg-gradient-to-r from-legacy-orange to-legacy-blue">
+                    <a href={`mailto:${profile.email}?subject=Let's Collaborate!&body=Hi Douglas,%0D%0AI found your portfolio and would like to discuss...`}>
+                      <MessageSend className="w-5 h-5 mr-2" />
+                      Send Me a Message
+                    </a>
+                  </Button>
+                  
+                  <Button asChild variant="outline" size="lg" className="w-full">
+                    <a href={profile.social.website} target="_blank" rel="noopener noreferrer">
+                      <Github className="w-5 h-5 mr-2" />
+                      Visit LegacyAI.info
+                    </a>
+                  </Button>
+                </div>
+              </div>
+              
+              <div className="border-t pt-4 mt-6">
+                <p className="text-sm text-muted-foreground text-center">
+                  "Vibe Coder | AI Strategist" - Building the future of intelligent software
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  )
+}
