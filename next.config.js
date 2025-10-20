@@ -2,7 +2,7 @@
 const nextConfig = {
   // Production deployment configuration for static export
   output: 'export',
-  trailingSlash: true,
+  trailingSlash: false,
   
   images: {
     unoptimized: true,
