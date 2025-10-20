@@ -1,9 +1,9 @@
 // Central UI component re-exports to avoid duplicate keys
-export { ButtonComponent } from './button'
-export { BadgeComponent } from './badge'
-export { buttonVariants } from './button'
-export { badgeVariants } from './badge'
+import { Button as ButtonComponent, buttonVariants } from '../../ui/button'
+import { Badge as BadgeComponent, badgeVariants } from '../../ui/badge'
+
+export { ButtonComponent, buttonVariants, BadgeComponent, badgeVariants }
 
 // Legacy exports for backward compatibility
-export { Button } from './ui/components' // Falls back to ButtonComponent
-export { Badge } from './ui/components' // Falls back to BadgeComponent
+export const Button = ButtonComponent
+export const Badge = BadgeComponent
