@@ -6,12 +6,13 @@ import { Footer } from '@/components/footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
+  metadataBase: new URL('https://portfolio.legacyai.space'),
   title: 'Douglas Talley - AI Strategist & Developer',
   description: 'Vibe Coder | AI Strategist | Full-Stack Developer specializing in AI/ML, React Native, and developer tooling',
   openGraph: {
     title: 'Douglas Talley - AI Strategist & Developer',
     description: 'Showcasing innovative projects in AI, mobile development, and developer tooling',
-    url: 'https://douglastalley.com',
+    url: 'https://portfolio.legacyai.space',
     siteName: 'Douglas Talley Portfolio',
     images: ['/og-image.png'],
     locale: 'en_US',
